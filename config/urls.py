@@ -19,7 +19,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls'))
+    path('', include('core.urls')),
+    path('', include('services.urls'))
+
 ]
 
 # Para poder ver la imagen desde el panel de administracion de Django
