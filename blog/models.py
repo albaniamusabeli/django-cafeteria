@@ -27,7 +27,7 @@ class Post(models.Model):
     # Author es foraneo.. en caso de borrarlo se borrará en cascada.. o sea tambien borrará los blogs que
     # el autor haga
     author      = models.ForeignKey(User, verbose_name='Autor', on_delete=models.CASCADE)
-    categories  = models.ManyToManyField(Category, verbose_name='Categorias')
+    categories  = models.ManyToManyField(Category, verbose_name='Categorias', related_name="get_posts")
 
     created     = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de Creación')
     updated     = models.DateTimeField(auto_now=True, verbose_name='Fecha de Actualización')
